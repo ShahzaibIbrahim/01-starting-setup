@@ -1,0 +1,16 @@
+
+function Expenses ({items}) {
+    return (
+        <div>
+            {items.map((object, i) => 
+                <ExpenseItem
+                    key={object.id} title={object.title}
+                    key={object.id} amount={object.amount}
+                    key={object.id} date={object.date}
+                />
+             )}
+        </div>
+    );
+};
+
+export default Expenses;
