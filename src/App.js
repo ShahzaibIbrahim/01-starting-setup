@@ -9,9 +9,15 @@ function App() {
     { title: "TukTuk", price: "28", date: new Date(2021, 2, 4)  },
   ];
 
+  const addExpenseHandler = (newExpenseData) => {
+      expences.push(newExpenseData);
+      console.log("App.js");
+      console.log(newExpenseData);
+  }
+
   return (
     <div>
-      <NewExpense />
+      <NewExpense addExpense={addExpenseHandler} />
       <Expense expences={expences}></Expense>
     </div>
   );
