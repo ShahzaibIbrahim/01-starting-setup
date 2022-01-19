@@ -1,16 +1,30 @@
+import React, { useState } from "react";
+import Cards from "../UI/Cards";
 import "./Expense.css";
+import ExpenseFilter from "./ExpenseFilter";
 import ExpenseItem from "./ExpenseItem";
 
-function Expense(props) { 
-
+function Expense(props) {
     const expences = props.expences;
+  
+    const [year, setYear] = useState('2020');
+
+    const changeYearDropDownHandler = (enteredYear) => {
+        console.log('Expense.js');
+        console.log(enteredYear);
+        setYear(enteredYear);
+    };
+
+
     return (
-        <div className="expenses">
-          <h2>Filos</h2>
+      <div>
+        <Cards className="expenses">
+        <ExpenseFilter  selected={year} onChangeYearDropDown={changeYearDropDownHandler}/>
           {expences.map((expence) => {
             return (<ExpenseItem key={expence.title} title={expence.title} price={expence.price} date={expence.date}></ExpenseItem> )
           })}
-        </div>
+        </Cards>
+      </div>
       );
 
 }
