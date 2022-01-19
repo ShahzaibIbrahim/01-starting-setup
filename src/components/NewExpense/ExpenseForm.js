@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Cards from '../UI/Cards';
 
 import "./ExpenseForm.css";
 
@@ -52,9 +53,16 @@ const submitHandler = (event) => {
     };
 
     props.onSaveExpenseData(expenseData);
+    props.onCancelAction();
     setEnteredAmount('');
     setEnteredTitle('');
     setEnteredDate('');
+};
+
+const cancelHandler = (event) => {
+    event.preventDefault();
+
+    props.onCancelAction();
 };
 
   return (
@@ -73,9 +81,12 @@ const submitHandler = (event) => {
           <input type="date" min="2019-01-01" max="2022-12-31" value={enteredDate} onChange={dateChangeHandler}/>
         </div>
       </div>
-      <div className="new-expense__actions">
-          <button type="submit">Add Expense</button>
-      </div>
+      <Cards className="new-expense__actions">
+        <div>
+            <button onClick={cancelHandler}>Cancel</button>
+            <button type="submit">Add Expense</button>
+        </div>
+      </Cards>
     </form>
   );
 };
