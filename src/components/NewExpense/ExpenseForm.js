@@ -48,7 +48,7 @@ const submitHandler = (event) => {
     
     const expenseData = {
         title: enteredTitle,
-        price: enteredAmount,
+        price: +enteredAmount,
         date: new Date(enteredDate)
     };
 

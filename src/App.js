@@ -5,9 +5,9 @@ import NewExpense from "./components/NewExpense/NewExpense";
 
 const dummyExpenses = [
   { title: "Car", price: "28", date: new Date(2021, 2, 4)  }, 
-  { title: "Bike", price: "30", date: new Date(2019, 2, 4)  }, 
-  { title: "Rickshaw", price: "40", date: new Date(2020, 2, 4)  }, 
-  { title: "TukTuk", price: "50", date: new Date(2021, 2, 4)  },
+  { title: "Bike", price: "30", date: new Date(2019, 4, 4)  }, 
+  { title: "Rickshaw", price: "40", date: new Date(2020, 5, 4)  }, 
+  { title: "TukTuk", price: "50", date: new Date(2021, 6, 4)  },
 ];
 
 const App = () => {
